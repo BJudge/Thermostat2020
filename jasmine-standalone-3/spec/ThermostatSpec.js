@@ -37,4 +37,10 @@ describe('Thermostat', function() {
     thermostat.switchPowerMode();
     expect(thermostat.increase(14)).toMatch("Power Saving Mode is off, Temperature cannot exceed 32 degrees");
   });
+
+  it('can reset the temperature to 20 degrees', function() {
+    thermostat.increase(4);
+    thermostat.resetTemperature();
+    expect(thermostat._currentTemperature).toEqual(20);
+  });
 });
