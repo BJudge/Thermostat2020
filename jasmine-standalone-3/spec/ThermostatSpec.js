@@ -21,6 +21,12 @@ describe('Thermostat', function() {
   });
   it('will not allow you to go below 10 degrees', function() {
     thermostat.minimumTemperature();
-    expect(thermostat.decrease(1)).toEqual("Temperature Already At Minimum");
+    expect(thermostat.decrease(1)).toMatch("Temperature Already At Minimum");
+  });
+  it('has a power saving mode, on by default', function() {
+    expect(thermostat._powerSavingMode).toMatch("ON");
+  });
+  it('will not go above 25 degree when power saving mode is on', function() {
+    expect(thermostat.increase(26)).toMatch("Power Saving Mode is on, Temperature cannot exceed 25 degrees");
   });
 });
