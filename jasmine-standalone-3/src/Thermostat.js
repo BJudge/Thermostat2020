@@ -46,5 +46,5 @@ Thermostat.prototype.energySetting = function() {
   if(this._currentTemperature  < 25) {
     return "medium-usage";
   }
-  return "high-usage";
+    return "high-usage";
 };
