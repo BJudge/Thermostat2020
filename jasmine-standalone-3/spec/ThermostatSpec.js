@@ -27,6 +27,14 @@ describe('Thermostat', function() {
     expect(thermostat._powerSavingMode).toMatch("ON");
   });
   it('will not go above 25 degree when power saving mode is on', function() {
-    expect(thermostat.increase(26)).toMatch("Power Saving Mode is on, Temperature cannot exceed 25 degrees");
+    expect(thermostat.increase(6)).toMatch("Power Saving Mode is on, Temperature cannot exceed 25 degrees");
+  });
+  it('can turn off power saving mode', function() {
+    thermostat.switchPowerMode();
+    expect(thermostat._powerSavingMode).toMatch("OFF");
+  });
+  it('will not go above 32 degree when power saving mode is off', function() {
+    thermostat.switchPowerMode();
+    expect(thermostat.increase(14)).toMatch("Power Saving Mode is off, Temperature cannot exceed 32 degrees");
   });
 });
