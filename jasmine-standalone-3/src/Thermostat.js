@@ -38,3 +38,13 @@ Thermostat.prototype.switchPowerMode = function() {
 Thermostat.prototype.resetTemperature = function() {
   return this._currentTemperature = 20
 }
+
+Thermostat.prototype.energySetting = function() {
+  if(this._currentTemperature  < 18) {
+    return "low-usage";
+  }
+  if(this._currentTemperature  < 25) {
+    return "medium-usage";
+  }
+  return "high-usage";
+};
