@@ -19,4 +19,8 @@ describe('Thermostat', function() {
     thermostat.minimumTemperature();
     expect(thermostat._currentTemperature).toEqual(10);
   });
+  it('will not allow you to go below 10 degrees', function() {
+    thermostat.minimumTemperature();
+    expect(thermostat.decrease(1)).toEqual("Temperature Already At Minimum");
+  });
 });
