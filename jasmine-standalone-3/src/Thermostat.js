@@ -8,10 +8,10 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.increase = function(number) {
-  if (this._powerSavingMode === "ON" && this._currentTemperature + number >= 25) {
+  if (this._powerSavingMode === "ON" && this._currentTemperature + number > 25) {
     return "Power Saving Mode is on, Temperature cannot exceed 25 degrees";
   }
-  if (this._powerSavingMode === "OFF" && this._currentTemperature + number >= 32) {
+  if (this._powerSavingMode === "OFF" && this._currentTemperature + number > 32) {
     return "Power Saving Mode is off, Temperature cannot exceed 32 degrees";
   }
   this._currentTemperature += number;
@@ -29,10 +29,10 @@ Thermostat.prototype.minimumTemperature = function() {
 };
 
 Thermostat.prototype.switchPowerMode = function() {
-  if (this._powerSavingMode = "ON") {
+  if (this._powerSavingMode === "ON") {
     return this._powerSavingMode = "OFF";
   }
-   return this._powerSavingMode = "ON";
+    return this._powerSavingMode = "ON";
 };
 
 Thermostat.prototype.resetTemperature = function() {

@@ -5,13 +5,16 @@
     <title>Thermostat</title>
   </head>
   <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="thermostat/src/interface.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="thermostat/src/stylesheet.css" type="text/css"/>
     <section>
       <h1 id="temperature"></h1>
       <p>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
+        power saving mode is <span id="power-saving-status">Eco</span>
         <button id="powersavingMode">Change Power Mode</button>
       </p>
     </section>

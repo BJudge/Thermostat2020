@@ -29,16 +29,16 @@ class Thermostat {
   powermode() {
     if (this.powersetting === "Eco") {
     return this.powersetting = "Inferno";
-    }
+  } this.powersetting = "Eco";
   }
   reset() {
     this.temperature = 20
   }
-  energyyUsage() {
+  energyUsage() {
     if(this.temperature < 18) {
-      return "Low Energy Usage"
+      return "low-usage";
     } if (this.temperature < 25) {
-      return "Medium Energy Usage"
-    } return "High Energy Usage"
+      return 'medium-usage';
+    } return "high-usage";
   }
 }
